@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @stadium.name
+%p
+  %b Foundation date:
+  = @stadium.foundation_date
+%p
+  %b Stadium capacity:
+  = @stadium.stadium_capacity
+%p
+  %b Club:
+  = @stadium.club
+
+= link_to 'Edit', edit_stadium_path(@stadium)
+\|
+= link_to 'Back', stadia_path

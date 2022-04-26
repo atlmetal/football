@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_26_020645) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_26_021302) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,8 +67,30 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_020645) do
     t.index ["federation_id"], name: "index_leagues_on_federation_id"
   end
 
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.decimal "current_value"
+    t.bigint "club_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_players_on_club_id"
+  end
+
+  create_table "stadia", force: :cascade do |t|
+    t.string "name"
+    t.date "foundation_date"
+    t.integer "stadium_capacity"
+    t.bigint "club_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_stadia_on_club_id"
+  end
+
   add_foreign_key "clubs", "leagues"
   add_foreign_key "confederations", "football_organizations"
   add_foreign_key "federations", "confederations"
   add_foreign_key "leagues", "federations"
+  add_foreign_key "players", "clubs"
+  add_foreign_key "stadia", "clubs"
 end
