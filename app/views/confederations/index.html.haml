@@ -1,0 +1,31 @@
+%h1 Listing confederations
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Members
+      %th Continental tournament
+      %th Description
+      %th Foundation date
+      %th Football organization
+      %th
+      %th
+      %th
+
+  %tbody
+    - @confederations.each do |confederation|
+      %tr
+        %td= confederation.name
+        %td= confederation.members
+        %td= confederation.continental_tournament
+        %td= confederation.description
+        %td= confederation.foundation_date
+        %td= confederation.football_organization
+        %td= link_to 'Show', confederation
+        %td= link_to 'Edit', edit_confederation_path(confederation)
+        %td= link_to 'Destroy', confederation, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Confederation', new_confederation_path

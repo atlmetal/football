@@ -1,0 +1,25 @@
+%h1 Listing football_organizations
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Foundation date
+      %th
+      %th
+      %th
+
+  %tbody
+    - @football_organizations.each do |football_organization|
+      %tr
+        %td= football_organization.name
+        %td= football_organization.description
+        %td= football_organization.foundation_date
+        %td= link_to 'Show', football_organization
+        %td= link_to 'Edit', edit_football_organization_path(football_organization)
+        %td= link_to 'Destroy', football_organization, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Football organization', new_football_organization_path

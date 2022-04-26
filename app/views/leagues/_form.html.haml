@@ -1,0 +1,15 @@
+-# frozen_string_literal: true
+= simple_form_for(@league) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :name
+    = f.input :local_tournament
+    = f.input :club_members
+    = f.input :current_champion
+    = f.input :foundation_date
+    = f.association :federation
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @league.name
+%p
+  %b Local tournament:
+  = @league.local_tournament
+%p
+  %b Club members:
+  = @league.club_members
+%p
+  %b Current champion:
+  = @league.current_champion
+%p
+  %b Foundation date:
+  = @league.foundation_date
+%p
+  %b Federation:
+  = @league.federation
+
+= link_to 'Edit', edit_league_path(@league)
+\|
+= link_to 'Back', leagues_path

@@ -1,0 +1,31 @@
+%h1 Listing leagues
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Local tournament
+      %th Club members
+      %th Current champion
+      %th Foundation date
+      %th Federation
+      %th
+      %th
+      %th
+
+  %tbody
+    - @leagues.each do |league|
+      %tr
+        %td= league.name
+        %td= league.local_tournament
+        %td= league.club_members
+        %td= league.current_champion
+        %td= league.foundation_date
+        %td= league.federation
+        %td= link_to 'Show', league
+        %td= link_to 'Edit', edit_league_path(league)
+        %td= link_to 'Destroy', league, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New League', new_league_path

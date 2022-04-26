@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @confederation.name
+%p
+  %b Members:
+  = @confederation.members
+%p
+  %b Continental tournament:
+  = @confederation.continental_tournament
+%p
+  %b Description:
+  = @confederation.description
+%p
+  %b Foundation date:
+  = @confederation.foundation_date
+%p
+  %b Football organization:
+  = @confederation.football_organization
+
+= link_to 'Edit', edit_confederation_path(@confederation)
+\|
+= link_to 'Back', confederations_path
