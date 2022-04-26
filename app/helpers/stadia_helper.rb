@@ -1,2 +1,2 @@
-module StadiaHelper
+module StadiumHelper
 end

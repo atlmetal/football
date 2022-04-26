@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "stadia/show", type: :view do
+RSpec.describe "stadium/show", type: :view do
   before(:each) do
     @stadium = assign(:stadium, Stadium.create!(
       name: "Name",

@@ -12,8 +12,8 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/stadia", type: :request do
-  
+RSpec.describe "/stadium", type: :request do
+
   # This should return the minimal set of attributes required to create a valid
   # Stadium. As you add validations to Stadium, be sure to
   # adjust the attributes here as well.
@@ -28,7 +28,7 @@ RSpec.describe "/stadia", type: :request do
   describe "GET /index" do
     it "renders a successful response" do
       Stadium.create! valid_attributes
-      get stadia_url
+      get stadium_url
       expect(response).to be_successful
     end
   end
@@ -60,12 +60,12 @@ RSpec.describe "/stadia", type: :request do
     context "with valid parameters" do
       it "creates a new Stadium" do
         expect {
-          post stadia_url, params: { stadium: valid_attributes }
+          post stadium_url, params: { stadium: valid_attributes }
         }.to change(Stadium, :count).by(1)
       end
 
       it "redirects to the created stadium" do
-        post stadia_url, params: { stadium: valid_attributes }
+        post stadium_url, params: { stadium: valid_attributes }
         expect(response).to redirect_to(stadium_url(Stadium.last))
       end
     end
@@ -73,12 +73,12 @@ RSpec.describe "/stadia", type: :request do
     context "with invalid parameters" do
       it "does not create a new Stadium" do
         expect {
-          post stadia_url, params: { stadium: invalid_attributes }
+          post stadium_url, params: { stadium: invalid_attributes }
         }.to change(Stadium, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post stadia_url, params: { stadium: invalid_attributes }
+        post stadium_url, params: { stadium: invalid_attributes }
         expect(response).to be_successful
       end
     end
@@ -122,10 +122,10 @@ RSpec.describe "/stadia", type: :request do
       }.to change(Stadium, :count).by(-1)
     end
 
-    it "redirects to the stadia list" do
+    it "redirects to the stadium list" do
       stadium = Stadium.create! valid_attributes
       delete stadium_url(stadium)
-      expect(response).to redirect_to(stadia_url)
+      expect(response).to redirect_to(stadium_url)
     end
   end
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :stadia
+  resources :stadium
   resources :players
   resources :clubs
   resources :leagues

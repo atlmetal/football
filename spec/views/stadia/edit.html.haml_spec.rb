@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "stadia/edit", type: :view do
+RSpec.describe "stadium/edit", type: :view do
   before(:each) do
     @stadium = assign(:stadium, Stadium.create!(
       name: "MyString",

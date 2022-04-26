@@ -1,25 +1,25 @@
-class StadiaController < ApplicationController
+class StadiumController < ApplicationController
   before_action :set_stadium, only: %i[ show edit update destroy ]
 
-  # GET /stadia or /stadia.json
+  # GET /stadium or /stadium.json
   def index
-    @stadia = Stadium.all
+    @stadium = Stadium.all
   end
 
-  # GET /stadia/1 or /stadia/1.json
+  # GET /stadium/1 or /stadium/1.json
   def show
   end
 
-  # GET /stadia/new
+  # GET /stadium/new
   def new
     @stadium = Stadium.new
   end
 
-  # GET /stadia/1/edit
+  # GET /stadium/1/edit
   def edit
   end
 
-  # POST /stadia or /stadia.json
+  # POST /stadium or /stadium.json
   def create
     @stadium = Stadium.new(stadium_params)
 
@@ -34,7 +34,7 @@ class StadiaController < ApplicationController
     end
   end
 
-  # PATCH/PUT /stadia/1 or /stadia/1.json
+  # PATCH/PUT /stadium/1 or /stadium/1.json
   def update
     respond_to do |format|
       if @stadium.update(stadium_params)
@@ -47,12 +47,12 @@ class StadiaController < ApplicationController
     end
   end
 
-  # DELETE /stadia/1 or /stadia/1.json
+  # DELETE /stadium/1 or /stadium/1.json
   def destroy
     @stadium.destroy
 
     respond_to do |format|
-      format.html { redirect_to stadia_url, notice: "Stadium was successfully destroyed." }
+      format.html { redirect_to stadium_url, notice: "Stadium was successfully destroyed." }
       format.json { head :no_content }
     end
   end

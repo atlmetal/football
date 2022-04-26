@@ -1,38 +1,38 @@
 require "rails_helper"
 
-RSpec.describe StadiaController, type: :routing do
+RSpec.describe stadiumController, type: :routing do
   describe "routing" do
     it "routes to #index" do
-      expect(get: "/stadia").to route_to("stadia#index")
+      expect(get: "/stadium").to route_to("stadium#index")
     end
 
     it "routes to #new" do
-      expect(get: "/stadia/new").to route_to("stadia#new")
+      expect(get: "/stadium/new").to route_to("stadium#new")
     end
 
     it "routes to #show" do
-      expect(get: "/stadia/1").to route_to("stadia#show", id: "1")
+      expect(get: "/stadium/1").to route_to("stadium#show", id: "1")
     end
 
     it "routes to #edit" do
-      expect(get: "/stadia/1/edit").to route_to("stadia#edit", id: "1")
+      expect(get: "/stadium/1/edit").to route_to("stadium#edit", id: "1")
     end
 
 
     it "routes to #create" do
-      expect(post: "/stadia").to route_to("stadia#create")
+      expect(post: "/stadium").to route_to("stadium#create")
     end
 
     it "routes to #update via PUT" do
-      expect(put: "/stadia/1").to route_to("stadia#update", id: "1")
+      expect(put: "/stadium/1").to route_to("stadium#update", id: "1")
     end
 
     it "routes to #update via PATCH" do
-      expect(patch: "/stadia/1").to route_to("stadia#update", id: "1")
+      expect(patch: "/stadium/1").to route_to("stadium#update", id: "1")
     end
 
     it "routes to #destroy" do
-      expect(delete: "/stadia/1").to route_to("stadia#destroy", id: "1")
+      expect(delete: "/stadium/1").to route_to("stadium#destroy", id: "1")
     end
   end
 end
