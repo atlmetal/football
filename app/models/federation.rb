@@ -14,4 +14,7 @@
 class Federation < ApplicationRecord
   belongs_to :confederation
   has_many :leagues
+
+  validates :name, :national_team, :description, :foundation_date, presence: true
+  validates :name, :national_team, uniqueness: { case_sensitive: false }
 end

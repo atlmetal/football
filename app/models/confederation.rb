@@ -15,4 +15,7 @@
 class Confederation < ApplicationRecord
   belongs_to :football_organization
   has_many :federations
+
+  validates :name, :members, :continental_tournament, :description, :foundation_date, presence: true
+  validates :name, :continental_tournament, uniqueness: { case_sensitive: false }
 end

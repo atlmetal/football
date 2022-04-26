@@ -12,4 +12,7 @@
 #
 class Stadium < ApplicationRecord
   belongs_to :club
+
+  validates :name, :foundation_date, :stadium_capacity, presence: true
+  validates :name, uniqueness: { case_sensitive: false }
 end

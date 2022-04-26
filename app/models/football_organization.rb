@@ -10,4 +10,6 @@
 #  updated_at      :datetime         not null
 #
 class FootballOrganization < ApplicationRecord
+  validates :name, :description, :foundation_date, presence: true
+  validates :name, uniqueness: { case_sensitive: false }
 end

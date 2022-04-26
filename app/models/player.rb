@@ -12,4 +12,7 @@
 #
 class Player < ApplicationRecord
   belongs_to :club
+
+  validates :name, :age, :current_value, presence: true
+  validates :name, uniqueness: { case_sensitive: false }
 end

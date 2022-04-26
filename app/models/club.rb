@@ -14,4 +14,7 @@ class Club < ApplicationRecord
   belongs_to :league
   has_many :players
   has_many :stadiums
+
+  validates :name, :foundation_date, :tittles, presence: true
+  validates :name, uniqueness: { case_sensitive: false }
 end

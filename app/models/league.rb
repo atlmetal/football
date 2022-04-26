@@ -15,4 +15,7 @@
 class League < ApplicationRecord
   belongs_to :federation
   has_many :clubs
+
+  validates :name, :local_tournament, :club_members, :current_champion, :foundation_date, presence: true
+  validates :name, :local_tournament, uniqueness: { case_sensitive: false }
 end
